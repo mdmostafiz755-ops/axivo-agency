@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — VORTEX Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-black text-white overflow-x-hidden">
+
+  <!-- LOADER -->
+  <div class="page-loader" id="pageLoader">
+    <div class="text-center">
+      <div class="loader-logo"><span class="loader-text-white">VOR</span><span class="loader-text-red">TEX</span></div>
+    </div>
+    <div class="loader-bar"></div>
+  </div>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 w-full z-50 nav-glass px-6 md:px-16 py-5 flex items-center justify-between">
+    <a href="index.html" class="logo-text text-3xl tracking-widest text-white hover:text-red-500 transition-colors duration-300">VORTEX</a>
+    <div class="hidden md:flex items-center gap-10">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link active">About</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="testimonials.html" class="nav-link">Testimonials</a>
+      <a href="pricing.html" class="nav-link">Pricing</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <a href="contact.html" class="hidden md:block btn-primary">Get Started</a>
+    <button class="md:hidden text-white text-2xl" id="menuToggle">☰</button>
+  </nav>
+  <div id="mobileMenu" class="mobile-menu fixed top-0 left-0 w-full h-screen bg-black z-40 flex flex-col items-center justify-center gap-8 hidden">
+    <button id="menuClose" class="absolute top-6 right-6 text-white text-3xl">✕</button>
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="about.html" class="mobile-nav-link">About</a>
+    <a href="services.html" class="mobile-nav-link">Services</a>
+    <a href="testimonials.html" class="mobile-nav-link">Testimonials</a>
+    <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+    <a href="contact.html" class="mobile-nav-link">Contact</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero pt-28">
+    <div class="page-hero-grid"></div>
+    <div class="float-shape shape-1"></div>
+    <div class="relative z-10 w-full">
+      <p class="section-eyebrow reveal-up" style="animation-delay:0.1s">Who We Are</p>
+      <h1 class="page-hero-title reveal-up" style="animation-delay:0.25s">OUR<br/><span class="text-red-500">STORY</span></h1>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section class="py-24 px-6 md:px-16">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+      <div class="scroll-reveal">
+        <p class="section-eyebrow">The Mission</p>
+        <h2 class="section-title mb-8">DESIGN IS<br/>NOT ART.<br/><span class="text-red-500">IT'S WAR.</span></h2>
+        <p class="barlow text-gray-400 text-lg leading-relaxed mb-6">
+          In a world drowning in noise, VORTEX was built to cut through. We don't design pretty things. We design weapons — brands, websites, and identities that seize attention and never let go.
+        </p>
+        <p class="barlow text-gray-500 leading-relaxed">
+          Founded in 2016 by a team of obsessive creatives, we've worked with startups, enterprises, and iconoclasts across 30+ industries. Every project we take on has one goal: make you impossible to ignore.
+        </p>
+      </div>
+      <div class="scroll-reveal" style="animation-delay: 0.15s">
+        <div class="relative">
+          <div class="about-visual">
+            <div class="about-box-1"></div>
+            <div class="about-box-2"></div>
+            <div class="about-box-3"></div>
+            <div class="about-label">
+              <span class="mono text-xs text-red-500 tracking-widest">EST. 2016</span>
+              <p class="logo-text text-5xl text-white mt-2">VORTEX</p>
+              <p class="mono text-xs text-gray-600 mt-2 tracking-widest">DESIGN STUDIO</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="py-20 px-6 md:px-16 bg-black border-y border-red-900/20">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16 scroll-reveal">
+        <p class="section-eyebrow">Core Values</p>
+        <h2 class="section-title">WHAT DRIVES <span class="text-red-500">US</span></h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-red-900/10">
+        <div class="value-card scroll-reveal" style="animation-delay:0.05s">
+          <span class="value-icon">01</span>
+          <h3>Obsession Over Perfection</h3>
+          <p>We don't stop at good enough. We push until it's impossible to improve, then we push again.</p>
+        </div>
+        <div class="value-card scroll-reveal" style="animation-delay:0.15s">
+          <span class="value-icon">02</span>
+          <h3>Honesty Over Comfort</h3>
+          <p>We tell clients what they need to hear, not what they want to hear. That's why our work actually works.</p>
+        </div>
+        <div class="value-card scroll-reveal" style="animation-delay:0.25s">
+          <span class="value-icon">03</span>
+          <h3>Boldness Over Safety</h3>
+          <p>Safe design disappears. We create work that polarizes, provokes, and demands a response.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="py-24 px-6 md:px-16">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-16 scroll-reveal">
+        <p class="section-eyebrow">The Crew</p>
+        <h2 class="section-title">MEET THE<br/><span class="text-red-500">TEAM</span></h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="team-card scroll-reveal" style="animation-delay:0.05s">
+          <div class="team-img"><div class="team-avatar">AK</div></div>
+          <div class="team-info">
+            <p class="team-name">Alex Krane</p>
+            <p class="team-role">Creative Director</p>
+            <p class="barlow text-gray-500 text-sm mt-3 leading-relaxed">Leads creative vision and brand strategy across all projects.</p>
+          </div>
+        </div>
+        <div class="team-card scroll-reveal" style="animation-delay:0.1s">
+          <div class="team-img"><div class="team-avatar">SR</div></div>
+          <div class="team-info">
+            <p class="team-name">Sofia Ramos</p>
+            <p class="team-role">Lead Designer</p>
+            <p class="barlow text-gray-500 text-sm mt-3 leading-relaxed">Crafts every visual system with obsessive attention to detail.</p>
+          </div>
+        </div>
+        <div class="team-card scroll-reveal" style="animation-delay:0.15s">
+          <div class="team-img"><div class="team-avatar">JT</div></div>
+          <div class="team-info">
+            <p class="team-name">James Takeda</p>
+            <p class="team-role">Web Developer</p>
+            <p class="barlow text-gray-500 text-sm mt-3 leading-relaxed">Turns designs into pixel-perfect, high-performance digital experiences.</p>
+          </div>
+        </div>
+        <div class="team-card scroll-reveal" style="animation-delay:0.2s">
+          <div class="team-img"><div class="team-avatar">NV</div></div>
+          <div class="team-info">
+            <p class="team-name">Nina Voss</p>
+            <p class="team-role">Strategy Lead</p>
+            <p class="barlow text-gray-500 text-sm mt-3 leading-relaxed">Connects design decisions to real business outcomes and growth.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="py-24 px-6 md:px-16 bg-black border-t border-red-900/10">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
+      <div class="scroll-reveal">
+        <p class="section-eyebrow">How We Work</p>
+        <h2 class="section-title">OUR<br/><span class="text-red-500">PROCESS</span></h2>
+        <p class="barlow text-gray-500 mt-6 leading-relaxed">Every project follows a battle-tested process that ensures both creativity and results.</p>
+      </div>
+      <div class="scroll-reveal" style="animation-delay:0.1s">
+        <div class="process-step">
+          <span class="process-num">01</span>
+          <div class="process-content">
+            <h3>Discovery & Strategy</h3>
+            <p>We dig deep into your business, competitors, and audience to build the strategic foundation.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <span class="process-num">02</span>
+          <div class="process-content">
+            <h3>Concept & Exploration</h3>
+            <p>We generate bold ideas without limits, then refine toward the most powerful direction.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <span class="process-num">03</span>
+          <div class="process-content">
+            <h3>Design & Build</h3>
+            <p>Meticulous execution across every touchpoint — nothing ships unless it's exceptional.</p>
+          </div>
+        </div>
+        <div class="process-step" style="border-bottom: none;">
+          <span class="process-num">04</span>
+          <div class="process-content">
+            <h3>Launch & Evolve</h3>
+            <p>We launch and continue to refine — great brands are living things that grow over time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-section px-6 md:px-16 py-16 border-t border-red-900/30">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div class="md:col-span-2">
+        <p class="logo-text text-4xl text-white mb-4">VORTEX</p>
+        <p class="text-gray-400 barlow max-w-xs">We craft brands, websites, and visual identities that demand attention and drive results.</p>
+        <div class="flex gap-4 mt-6">
+          <a href="#" class="social-icon">In</a>
+          <a href="#" class="social-icon">Tw</a>
+          <a href="#" class="social-icon">Dr</a>
+          <a href="#" class="social-icon">Be</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Navigation</p>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-heading">Contact</p>
+        <ul class="footer-links">
+          <li>hello@vortexstudio.co</li>
+          <li>+1 (555) 000-1234</li>
+          <li>New York, NY 10001</li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto mt-12 pt-6 border-t border-red-900/20 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-gray-600 text-sm barlow">© 2025 Vortex Studio. All rights reserved.</p>
+      <p class="text-gray-600 text-sm barlow">Crafted with ❤️ and obsession.</p>
+    </div>
+  </footer>
+
+  <style>
+    .about-visual { position: relative; height: 380px; }
+    .about-box-1 { position: absolute; inset: 0; background: linear-gradient(135deg, #1a0000, #8b0000); }
+    .about-box-2 { position: absolute; top: -20px; right: -20px; width: 60%; height: 60%; background: var(--black-2); border: 1px solid rgba(230,0,0,0.2); }
+    .about-box-3 { position: absolute; bottom: -20px; left: -20px; width: 40%; height: 40%; background: var(--red); }
+    .about-label { position: absolute; bottom: 40px; left: 40px; z-index: 10; }
+    .value-card { background: var(--black-2); padding: 40px; transition: background 0.4s; }
+    .value-card:hover { background: rgba(139,0,0,0.08); }
+    .value-icon { font-family: 'Bebas Neue', cursive; font-size: 1rem; color: var(--red); letter-spacing: 0.2em; display: block; margin-bottom: 16px; }
+    .value-card h3 { font-family: 'Bebas Neue', cursive; font-size: 1.8rem; color: white; margin-bottom: 12px; }
+    .value-card p { font-family: 'Barlow', sans-serif; font-size: 0.95rem; color: #666; line-height: 1.7; }
+  </style>
+
+  <script src="main.js"></script>
+</body>
+</html>

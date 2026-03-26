@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing — VORTEX Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-black text-white overflow-x-hidden">
+
+  <div class="page-loader" id="pageLoader">
+    <div class="text-center">
+      <div class="loader-logo"><span class="loader-text-white">VOR</span><span class="loader-text-red">TEX</span></div>
+    </div>
+    <div class="loader-bar"></div>
+  </div>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <nav class="fixed top-0 left-0 w-full z-50 nav-glass px-6 md:px-16 py-5 flex items-center justify-between">
+    <a href="index.html" class="logo-text text-3xl tracking-widest text-white hover:text-red-500 transition-colors duration-300">VORTEX</a>
+    <div class="hidden md:flex items-center gap-10">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="testimonials.html" class="nav-link">Testimonials</a>
+      <a href="pricing.html" class="nav-link active">Pricing</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <a href="contact.html" class="hidden md:block btn-primary">Get Started</a>
+    <button class="md:hidden text-white text-2xl" id="menuToggle">☰</button>
+  </nav>
+  <div id="mobileMenu" class="mobile-menu fixed top-0 left-0 w-full h-screen bg-black z-40 flex flex-col items-center justify-center gap-8 hidden">
+    <button id="menuClose" class="absolute top-6 right-6 text-white text-3xl">✕</button>
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="about.html" class="mobile-nav-link">About</a>
+    <a href="services.html" class="mobile-nav-link">Services</a>
+    <a href="testimonials.html" class="mobile-nav-link">Testimonials</a>
+    <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+    <a href="contact.html" class="mobile-nav-link">Contact</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero pt-28">
+    <div class="page-hero-grid"></div>
+    <div class="float-shape shape-1"></div>
+    <div class="relative z-10 w-full">
+      <p class="section-eyebrow reveal-up" style="animation-delay:0.1s">Investment</p>
+      <h1 class="page-hero-title reveal-up" style="animation-delay:0.25s">SIMPLE<br/><span class="text-red-500">PRICING</span></h1>
+    </div>
+  </section>
+
+  <!-- PRICING TOGGLE NOTE -->
+  <section class="py-16 px-6 md:px-16 text-center border-b border-red-900/10">
+    <p class="barlow text-gray-400 text-lg max-w-2xl mx-auto scroll-reveal">
+      Every project is unique. These packages are starting points — we scope every engagement specifically to your goals. All prices in USD.
+    </p>
+  </section>
+
+  <!-- PRICING CARDS -->
+  <section class="py-24 px-6 md:px-16">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Starter -->
+        <div class="pricing-card scroll-reveal" style="animation-delay:0.05s">
+          <p class="pricing-plan">Starter</p>
+          <div class="flex items-end gap-2 mt-4 mb-2">
+            <span class="pricing-price">$3,500</span>
+          </div>
+          <p class="pricing-period barlow text-gray-500">starting from / project</p>
+          <div class="my-6 h-px bg-red-900/20"></div>
+          <ul class="pricing-features">
+            <li>Brand identity (logo + 2 variants)</li>
+            <li>Basic brand guidelines document</li>
+            <li>Color palette & typography system</li>
+            <li>3 revision rounds</li>
+            <li>Source files delivery</li>
+            <li>2-week turnaround</li>
+          </ul>
+          <a href="contact.html" class="btn-outline w-full text-center mt-8 block">Start a Project</a>
+        </div>
+
+        <!-- Studio — FEATURED -->
+        <div class="pricing-card featured scroll-reveal" style="animation-delay:0.15s">
+          <div class="pricing-badge">Most Popular</div>
+          <p class="pricing-plan">Studio</p>
+          <div class="flex items-end gap-2 mt-4 mb-2">
+            <span class="pricing-price">$9,800</span>
+          </div>
+          <p class="pricing-period barlow text-gray-500">starting from / project</p>
+          <div class="my-6 h-px bg-red-900/30"></div>
+          <ul class="pricing-features">
+            <li>Full brand identity system</li>
+            <li>Comprehensive brand guidelines</li>
+            <li>Custom website design (5 pages)</li>
+            <li>Frontend development included</li>
+            <li>Motion intro animation</li>
+            <li>5 revision rounds</li>
+            <li>4-week turnaround</li>
+            <li>30-day post-launch support</li>
+          </ul>
+          <a href="contact.html" class="btn-primary w-full text-center mt-8 block">Start a Project</a>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="pricing-card scroll-reveal" style="animation-delay:0.25s">
+          <p class="pricing-plan">Enterprise</p>
+          <div class="flex items-end gap-2 mt-4 mb-2">
+            <span class="pricing-price">Custom</span>
+          </div>
+          <p class="pricing-period barlow text-gray-500">scoped per engagement</p>
+          <div class="my-6 h-px bg-red-900/20"></div>
+          <ul class="pricing-features">
+            <li>Everything in Studio, plus:</li>
+            <li>Full brand ecosystem development</li>
+            <li>Multi-page website (unlimited)</li>
+            <li>Campaign design & social systems</li>
+            <li>Print & packaging design</li>
+            <li>Motion graphics package</li>
+            <li>Dedicated project manager</li>
+            <li>Ongoing monthly retainer option</li>
+            <li>Unlimited revisions</li>
+          </ul>
+          <a href="contact.html" class="btn-outline w-full text-center mt-8 block">Let's Talk</a>
+        </div>
+
+      </div>
+
+      <!-- Add-ons -->
+      <div class="mt-20 scroll-reveal">
+        <p class="section-eyebrow">Add-Ons</p>
+        <h2 class="section-title mb-10">ENHANCE<br/><span class="text-red-500">YOUR PACKAGE</span></h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="addon-card">
+            <p class="addon-name">Social Media Kit</p>
+            <p class="addon-price">+$1,200</p>
+            <p class="addon-desc">Templates for all major platforms</p>
+          </div>
+          <div class="addon-card">
+            <p class="addon-name">Motion Package</p>
+            <p class="addon-price">+$2,400</p>
+            <p class="addon-desc">Logo animation + 3 motion assets</p>
+          </div>
+          <div class="addon-card">
+            <p class="addon-name">Print System</p>
+            <p class="addon-price">+$1,800</p>
+            <p class="addon-desc">Business cards, letterhead, collateral</p>
+          </div>
+          <div class="addon-card">
+            <p class="addon-name">SEO Setup</p>
+            <p class="addon-price">+$900</p>
+            <p class="addon-desc">On-page SEO + analytics integration</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-24 px-6 md:px-16 bg-black border-t border-red-900/10">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16 scroll-reveal">
+        <p class="section-eyebrow">Questions</p>
+        <h2 class="section-title">FAQ</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item scroll-reveal" style="animation-delay:0.05s">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>How does the project process work?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>We start with a discovery call to understand your goals, then send a detailed proposal. Once approved, we begin with strategy and concept development, followed by design, refinement, and final delivery.</p>
+          </div>
+        </div>
+        <div class="faq-item scroll-reveal" style="animation-delay:0.1s">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>What's included in the revision rounds?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Each revision round includes comprehensive feedback incorporation across all deliverables. We don't count individual tweaks — a revision round is a full cycle of feedback and updates.</p>
+          </div>
+        </div>
+        <div class="faq-item scroll-reveal" style="animation-delay:0.15s">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Do you work with international clients?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely. We work with clients globally. All communication happens via video calls and project management tools. We accept international wire transfers and major payment methods.</p>
+          </div>
+        </div>
+        <div class="faq-item scroll-reveal" style="animation-delay:0.2s">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>What's the payment structure?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>We typically work on a 50% upfront / 50% on delivery structure for projects under $10k. For larger engagements, we offer milestone-based payment schedules.</p>
+          </div>
+        </div>
+        <div class="faq-item scroll-reveal" style="animation-delay:0.25s">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Can I hire you on a monthly retainer?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes — retainer arrangements are available for ongoing design support, content creation, and brand management. Retainers start at $3,500/month and include a set number of design hours.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-section px-6 md:px-16 py-16 border-t border-red-900/30">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div class="md:col-span-2">
+        <p class="logo-text text-4xl text-white mb-4">VORTEX</p>
+        <p class="text-gray-400 barlow max-w-xs">We craft brands, websites, and visual identities that demand attention and drive results.</p>
+        <div class="flex gap-4 mt-6"><a href="#" class="social-icon">In</a><a href="#" class="social-icon">Tw</a><a href="#" class="social-icon">Dr</a><a href="#" class="social-icon">Be</a></div>
+      </div>
+      <div>
+        <p class="footer-heading">Navigation</p>
+        <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="testimonials.html">Testimonials</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="contact.html">Contact</a></li></ul>
+      </div>
+      <div>
+        <p class="footer-heading">Contact</p>
+        <ul class="footer-links"><li>hello@vortexstudio.co</li><li>+1 (555) 000-1234</li><li>New York, NY 10001</li></ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto mt-12 pt-6 border-t border-red-900/20 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-gray-600 text-sm barlow">© 2025 Vortex Studio. All rights reserved.</p>
+      <p class="text-gray-600 text-sm barlow">Crafted with ❤️ and obsession.</p>
+    </div>
+  </footer>
+
+  <style>
+    .addon-card { background: var(--black-2); border: 1px solid rgba(255,255,255,0.05); padding: 24px; transition: border-color 0.3s, transform 0.3s; }
+    .addon-card:hover { border-color: var(--red); transform: translateY(-2px); }
+    .addon-name { font-family: 'Bebas Neue', cursive; font-size: 1.3rem; color: white; }
+    .addon-price { font-family: 'Space Mono', monospace; font-size: 0.85rem; color: var(--red); margin: 6px 0; }
+    .addon-desc { font-family: 'Barlow', sans-serif; font-size: 0.85rem; color: #555; }
+    .faq-list { display: flex; flex-direction: column; }
+    .faq-item { border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 24px 0; font-family: 'Barlow', sans-serif; font-size: 1.1rem; font-weight: 600; color: white; background: none; border: none; cursor: pointer; text-align: left; transition: color 0.3s; }
+    .faq-question:hover { color: var(--red); }
+    .faq-icon { font-size: 1.5rem; color: var(--red); flex-shrink: 0; transition: transform 0.3s; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-answer { font-family: 'Barlow', sans-serif; font-size: 0.95rem; color: #666; line-height: 1.8; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; }
+    .faq-item.open .faq-answer { max-height: 200px; padding-bottom: 24px; }
+  </style>
+  <script>
+    function toggleFaq(btn) {
+      const item = btn.parentElement;
+      item.classList.toggle('open');
+    }
+  </script>
+  <script src="main.js"></script>
+</body>
+</html>

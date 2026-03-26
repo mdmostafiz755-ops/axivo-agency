@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — VORTEX Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-black text-white overflow-x-hidden">
+
+  <div class="page-loader" id="pageLoader">
+    <div class="text-center">
+      <div class="loader-logo"><span class="loader-text-white">VOR</span><span class="loader-text-red">TEX</span></div>
+    </div>
+    <div class="loader-bar"></div>
+  </div>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <nav class="fixed top-0 left-0 w-full z-50 nav-glass px-6 md:px-16 py-5 flex items-center justify-between">
+    <a href="index.html" class="logo-text text-3xl tracking-widest text-white hover:text-red-500 transition-colors duration-300">VORTEX</a>
+    <div class="hidden md:flex items-center gap-10">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="services.html" class="nav-link active">Services</a>
+      <a href="testimonials.html" class="nav-link">Testimonials</a>
+      <a href="pricing.html" class="nav-link">Pricing</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <a href="contact.html" class="hidden md:block btn-primary">Get Started</a>
+    <button class="md:hidden text-white text-2xl" id="menuToggle">☰</button>
+  </nav>
+  <div id="mobileMenu" class="mobile-menu fixed top-0 left-0 w-full h-screen bg-black z-40 flex flex-col items-center justify-center gap-8 hidden">
+    <button id="menuClose" class="absolute top-6 right-6 text-white text-3xl">✕</button>
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="about.html" class="mobile-nav-link">About</a>
+    <a href="services.html" class="mobile-nav-link">Services</a>
+    <a href="testimonials.html" class="mobile-nav-link">Testimonials</a>
+    <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+    <a href="contact.html" class="mobile-nav-link">Contact</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero pt-28">
+    <div class="page-hero-grid"></div>
+    <div class="float-shape shape-1"></div>
+    <div class="relative z-10 w-full">
+      <p class="section-eyebrow reveal-up" style="animation-delay:0.1s">What We Do</p>
+      <h1 class="page-hero-title reveal-up" style="animation-delay:0.25s">OUR<br/><span class="text-red-500">SERVICES</span></h1>
+    </div>
+  </section>
+
+  <!-- SERVICES LIST -->
+  <section class="py-24 px-6 md:px-16">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 gap-4">
+
+        <div class="service-card scroll-reveal" style="animation-delay:0.05s">
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+            <div class="flex-1">
+              <div class="service-num">01</div>
+              <h3 class="service-name">Brand Identity & Strategy</h3>
+              <p class="service-desc max-w-2xl">We build complete brand systems from the ground up — logo, color, typography, tone of voice, and visual guidelines. Everything you need to stand out and stay consistent across every touchpoint.</p>
+            </div>
+            <div class="flex flex-wrap gap-2 mt-4 md:mt-6 md:text-right">
+              <span class="service-tag">Logo Design</span>
+              <span class="service-tag">Brand Guidelines</span>
+              <span class="service-tag">Naming</span>
+              <span class="service-tag">Tone of Voice</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card scroll-reveal" style="animation-delay:0.1s">
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+            <div class="flex-1">
+              <div class="service-num">02</div>
+              <h3 class="service-name">Web Design & Development</h3>
+              <p class="service-desc max-w-2xl">Websites that don't just look exceptional — they convert. We design and develop custom sites with blazing performance, pixel-perfect details, and user experiences that flow like water.</p>
+            </div>
+            <div class="flex flex-wrap gap-2 mt-4 md:mt-6">
+              <span class="service-tag">UI/UX Design</span>
+              <span class="service-tag">Frontend Dev</span>
+              <span class="service-tag">CMS Integration</span>
+              <span class="service-tag">Performance</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card scroll-reveal" style="animation-delay:0.15s">
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+            <div class="flex-1">
+              <div class="service-num">03</div>
+              <h3 class="service-name">Motion & Visual Production</h3>
+              <p class="service-desc max-w-2xl">Static is dead. We create motion graphics, animated brand assets, social content, and short films that make your brand move with purpose and personality.</p>
+            </div>
+            <div class="flex flex-wrap gap-2 mt-4 md:mt-6">
+              <span class="service-tag">Motion Graphics</span>
+              <span class="service-tag">Animation</span>
+              <span class="service-tag">Social Content</span>
+              <span class="service-tag">Video Editing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card scroll-reveal" style="animation-delay:0.2s">
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+            <div class="flex-1">
+              <div class="service-num">04</div>
+              <h3 class="service-name">Print & Packaging</h3>
+              <p class="service-desc max-w-2xl">Physical touchpoints that demand to be held, read, and kept. From brand books and stationery to packaging and environmental graphics — we make the tangible unforgettable.</p>
+            </div>
+            <div class="flex flex-wrap gap-2 mt-4 md:mt-6">
+              <span class="service-tag">Packaging</span>
+              <span class="service-tag">Print Design</span>
+              <span class="service-tag">Signage</span>
+              <span class="service-tag">Collateral</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card scroll-reveal" style="animation-delay:0.25s">
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+            <div class="flex-1">
+              <div class="service-num">05</div>
+              <h3 class="service-name">Digital Marketing Design</h3>
+              <p class="service-desc max-w-2xl">Campaign visuals, social media systems, email templates, and ad creatives designed to stop thumbs and drive clicks. Performance design that earns its keep.</p>
+            </div>
+            <div class="flex flex-wrap gap-2 mt-4 md:mt-6">
+              <span class="service-tag">Social Media</span>
+              <span class="service-tag">Ad Creatives</span>
+              <span class="service-tag">Email Design</span>
+              <span class="service-tag">Campaign</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECTS STRIP -->
+  <section class="py-24 px-6 md:px-16 bg-black border-t border-red-900/10">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex items-end justify-between mb-16 scroll-reveal">
+        <div>
+          <p class="section-eyebrow">Our Work</p>
+          <h2 class="section-title">SELECTED<br/><span class="text-red-500">PROJECTS</span></h2>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <a href="project-detail.html?id=1" class="project-card group scroll-reveal">
+          <div class="project-img-wrap">
+            <div class="project-img" style="background: linear-gradient(135deg, #1a0000 0%, #8b0000 50%, #ff0000 100%);">
+              <div class="project-pattern-1"></div>
+            </div>
+            <div class="project-overlay"><span class="project-cta">View Project →</span></div>
+          </div>
+          <div class="project-info">
+            <span class="project-tag">Brand Identity</span>
+            <h3 class="project-title">Crimson Finance</h3>
+            <p class="project-desc">Complete brand overhaul for a fintech startup.</p>
+          </div>
+        </a>
+        <a href="project-detail.html?id=2" class="project-card group scroll-reveal" style="animation-delay:0.1s">
+          <div class="project-img-wrap">
+            <div class="project-img" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #cc0000 100%);">
+              <div class="project-pattern-2"></div>
+            </div>
+            <div class="project-overlay"><span class="project-cta">View Project →</span></div>
+          </div>
+          <div class="project-info">
+            <span class="project-tag">Web Design</span>
+            <h3 class="project-title">Noir Architecture</h3>
+            <p class="project-desc">Editorial website for a prestigious architecture firm.</p>
+          </div>
+        </a>
+        <a href="project-detail.html?id=3" class="project-card group scroll-reveal" style="animation-delay:0.15s">
+          <div class="project-img-wrap">
+            <div class="project-img" style="background: linear-gradient(135deg, #2d0000 0%, #5c0000 40%, #ff3333 100%);">
+              <div class="project-pattern-3"></div>
+            </div>
+            <div class="project-overlay"><span class="project-cta">View Project →</span></div>
+          </div>
+          <div class="project-info">
+            <span class="project-tag">Motion & Visual</span>
+            <h3 class="project-title">Flux Music Label</h3>
+            <p class="project-desc">Dynamic visual identity for an independent music label.</p>
+          </div>
+        </a>
+        <a href="project-detail.html?id=4" class="project-card group scroll-reveal" style="animation-delay:0.2s">
+          <div class="project-img-wrap">
+            <div class="project-img" style="background: linear-gradient(135deg, #0d0d0d 0%, #2a0000 50%, #e60000 100%);">
+              <div class="project-pattern-4"></div>
+            </div>
+            <div class="project-overlay"><span class="project-cta">View Project →</span></div>
+          </div>
+          <div class="project-info">
+            <span class="project-tag">UI/UX Design</span>
+            <h3 class="project-title">Apex Commerce</h3>
+            <p class="project-desc">Full e-commerce UX redesign — 3x conversion increase.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-section px-6 md:px-16 py-16 border-t border-red-900/30">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div class="md:col-span-2">
+        <p class="logo-text text-4xl text-white mb-4">VORTEX</p>
+        <p class="text-gray-400 barlow max-w-xs">We craft brands, websites, and visual identities that demand attention and drive results.</p>
+        <div class="flex gap-4 mt-6">
+          <a href="#" class="social-icon">In</a><a href="#" class="social-icon">Tw</a><a href="#" class="social-icon">Dr</a><a href="#" class="social-icon">Be</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-heading">Navigation</p>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="testimonials.html">Testimonials</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-heading">Contact</p>
+        <ul class="footer-links"><li>hello@vortexstudio.co</li><li>+1 (555) 000-1234</li><li>New York, NY 10001</li></ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto mt-12 pt-6 border-t border-red-900/20 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-gray-600 text-sm barlow">© 2025 Vortex Studio. All rights reserved.</p>
+      <p class="text-gray-600 text-sm barlow">Crafted with ❤️ and obsession.</p>
+    </div>
+  </footer>
+
+  <style>
+    .service-tag {
+      font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: #555; border: 1px solid #222; padding: 5px 10px;
+      white-space: nowrap;
+    }
+  </style>
+  <script src="main.js"></script>
+</body>
+</html>

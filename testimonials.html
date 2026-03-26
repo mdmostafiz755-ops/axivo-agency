@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testimonials — VORTEX Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-black text-white overflow-x-hidden">
+
+  <div class="page-loader" id="pageLoader">
+    <div class="text-center">
+      <div class="loader-logo"><span class="loader-text-white">VOR</span><span class="loader-text-red">TEX</span></div>
+    </div>
+    <div class="loader-bar"></div>
+  </div>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <nav class="fixed top-0 left-0 w-full z-50 nav-glass px-6 md:px-16 py-5 flex items-center justify-between">
+    <a href="index.html" class="logo-text text-3xl tracking-widest text-white hover:text-red-500 transition-colors duration-300">VORTEX</a>
+    <div class="hidden md:flex items-center gap-10">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="testimonials.html" class="nav-link active">Testimonials</a>
+      <a href="pricing.html" class="nav-link">Pricing</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <a href="contact.html" class="hidden md:block btn-primary">Get Started</a>
+    <button class="md:hidden text-white text-2xl" id="menuToggle">☰</button>
+  </nav>
+  <div id="mobileMenu" class="mobile-menu fixed top-0 left-0 w-full h-screen bg-black z-40 flex flex-col items-center justify-center gap-8 hidden">
+    <button id="menuClose" class="absolute top-6 right-6 text-white text-3xl">✕</button>
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="about.html" class="mobile-nav-link">About</a>
+    <a href="services.html" class="mobile-nav-link">Services</a>
+    <a href="testimonials.html" class="mobile-nav-link">Testimonials</a>
+    <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+    <a href="contact.html" class="mobile-nav-link">Contact</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero pt-28">
+    <div class="page-hero-grid"></div>
+    <div class="float-shape shape-1"></div>
+    <div class="relative z-10 w-full">
+      <p class="section-eyebrow reveal-up" style="animation-delay:0.1s">Social Proof</p>
+      <h1 class="page-hero-title reveal-up" style="animation-delay:0.25s">CLIENT<br/><span class="text-red-500">WORDS</span></h1>
+    </div>
+  </section>
+
+  <!-- FEATURED QUOTE -->
+  <section class="py-24 px-6 md:px-16 border-b border-red-900/10">
+    <div class="max-w-5xl mx-auto text-center scroll-reveal">
+      <p class="text-5xl md:text-7xl font-light barlow italic text-white leading-tight mb-10">
+        "Vortex didn't just redesign our brand — they <span class="text-red-500">changed how our industry sees us.</span>"
+      </p>
+      <div class="flex items-center justify-center gap-4">
+        <div class="w-12 h-12 rounded-full bg-red-900 flex items-center justify-center logo-text text-lg">MC</div>
+        <div class="text-left">
+          <p class="font-semibold barlow text-white">Marcus Chen</p>
+          <p class="mono text-xs text-red-500 tracking-widest">CEO, Meridian Capital</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS GRID -->
+  <section class="py-24 px-6 md:px-16">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-16 scroll-reveal">
+        <p class="section-eyebrow">All Reviews</p>
+        <h2 class="section-title">WHAT CLIENTS<br/><span class="text-red-500">SAY</span></h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <div class="testimonial-card scroll-reveal" style="animation-delay:0.05s">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"The team at Vortex transformed our outdated visual identity into something that feels genuinely powerful. Our investor decks now open doors they never did before."</p>
+          <p class="testimonial-author">Sarah Linden</p>
+          <p class="testimonial-company">Founder, Linden Ventures</p>
+        </div>
+
+        <div class="testimonial-card scroll-reveal" style="animation-delay:0.1s">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Working with Vortex was the best business decision I made this year. They understood our positioning before we could even articulate it ourselves. The final brand is extraordinary."</p>
+          <p class="testimonial-author">David Okafor</p>
+          <p class="testimonial-company">CMO, Apex Technologies</p>
+        </div>
+
+        <div class="testimonial-card scroll-reveal" style="animation-delay:0.15s">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Our website conversion rate jumped 240% in the first month after launch. I wasn't expecting that kind of commercial impact from a design project. These guys deliver."</p>
+          <p class="testimonial-author">Priya Sharma</p>
+          <p class="testimonial-company">Director, Novu Commerce</p>
+        </div>
+
+        <div class="testimonial-card scroll-reveal" style="animation-delay:0.2s">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"I've worked with a dozen agencies. Vortex is different. They challenge your assumptions, push back when needed, and always deliver something that exceeds what you asked for."</p>
+          <p class="testimonial-author">James Whitmore</p>
+          <p class="testimonial-company">Creative Director, Pulse Media</p>
+        </div>
+
+        <div class="testimonial-card scroll-reveal" style="animation-delay:0.25s">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"The motion graphics they created for our product launch went viral on LinkedIn. Over 2 million views in a week. The ROI on this engagement alone paid for the entire project ten times over."</p>
+          <p class="testimonial-author">Amara Johnson</p>
+          <p class="testimonial-company">VP Marketing, Flux Labs</p>
+        </div>
+
+        <div class="testimonial-card scroll-reveal" style="animation-delay:0.3s">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"From the very first call, Vortex felt like a partner, not a vendor. They immersed themselves in our world and came back with ideas we never could have generated internally. Truly exceptional work."</p>
+          <p class="testimonial-author">Elena Varga</p>
+          <p class="testimonial-company">CEO, Varga Architecture</p>
+        </div>
+
+        <div class="testimonial-card scroll-reveal" style="animation-delay:0.35s">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Our old brand was holding us back from enterprise clients. Vortex rebuilt everything in 6 weeks and we signed our first Fortune 500 deal two months after launch. Correlation? Absolutely."</p>
+          <p class="testimonial-author">Noah Brennan</p>
+          <p class="testimonial-company">Co-Founder, Strata SaaS</p>
+        </div>
+
+        <div class="testimonial-card scroll-reveal" style="animation-delay:0.4s">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"The packaging design they created for our product line has won three industry awards. We get comments about it at every trade show. People pick it up just to look at it. That's Vortex."</p>
+          <p class="testimonial-author">Chloe Dubois</p>
+          <p class="testimonial-company">Brand Manager, Terra Cosmetics</p>
+        </div>
+
+        <div class="testimonial-card scroll-reveal" style="animation-delay:0.45s">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"They don't just make things beautiful — they make them strategic. Every design decision is tied back to business objectives. That's rare in the creative world and it makes all the difference."</p>
+          <p class="testimonial-author">Rafael Torres</p>
+          <p class="testimonial-company">Strategy Lead, Torres Group</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- NUMBERS -->
+  <section class="py-20 px-6 md:px-16 bg-black border-y border-red-900/10">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="text-center scroll-reveal">
+          <p class="stat-num text-5xl md:text-6xl">120+</p>
+          <p class="stat-label mt-2">Happy Clients</p>
+        </div>
+        <div class="text-center scroll-reveal" style="animation-delay:0.1s">
+          <p class="stat-num text-5xl md:text-6xl">98%</p>
+          <p class="stat-label mt-2">Satisfaction Rate</p>
+        </div>
+        <div class="text-center scroll-reveal" style="animation-delay:0.2s">
+          <p class="stat-num text-5xl md:text-6xl">40+</p>
+          <p class="stat-label mt-2">Awards Won</p>
+        </div>
+        <div class="text-center scroll-reveal" style="animation-delay:0.3s">
+          <p class="stat-num text-5xl md:text-6xl">8yr</p>
+          <p class="stat-label mt-2">In Business</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-section px-6 md:px-16 py-16 border-t border-red-900/30">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div class="md:col-span-2">
+        <p class="logo-text text-4xl text-white mb-4">VORTEX</p>
+        <p class="text-gray-400 barlow max-w-xs">We craft brands, websites, and visual identities that demand attention and drive results.</p>
+        <div class="flex gap-4 mt-6"><a href="#" class="social-icon">In</a><a href="#" class="social-icon">Tw</a><a href="#" class="social-icon">Dr</a><a href="#" class="social-icon">Be</a></div>
+      </div>
+      <div>
+        <p class="footer-heading">Navigation</p>
+        <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="testimonials.html">Testimonials</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="contact.html">Contact</a></li></ul>
+      </div>
+      <div>
+        <p class="footer-heading">Contact</p>
+        <ul class="footer-links"><li>hello@vortexstudio.co</li><li>+1 (555) 000-1234</li><li>New York, NY 10001</li></ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto mt-12 pt-6 border-t border-red-900/20 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-gray-600 text-sm barlow">© 2025 Vortex Studio. All rights reserved.</p>
+      <p class="text-gray-600 text-sm barlow">Crafted with ❤️ and obsession.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
