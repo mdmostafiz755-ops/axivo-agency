@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VORTEX Studio — Design Agency</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,300&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="bg-black text-white overflow-x-hidden">
 
+<body class="bg-black text-white overflow-x-hidden">
+  <!-- LOADER -->
+  <div class="page-loader" id="pageLoader">
+    <div class="text-center">
+      <div class="loader-logo"><img src="./assets/axivologo.png" alt="" class="w-60"></div>
+    </div>
+    <div class="loader-bar"></div>
+  </div>
   <!-- CURSOR -->
   <div class="cursor" id="cursor"></div>
   <div class="cursor-follower" id="cursorFollower"></div>
 
   <!-- NAV -->
   <nav class="fixed top-0 left-0 w-full z-50 nav-glass px-6 md:px-16 py-5 flex items-center justify-between">
-    <a href="index.html" class="logo-text text-3xl tracking-widest text-white hover:text-red-500 transition-colors duration-300"><img src="./assets/axivologo.png" alt="" class="w-40"></a>
+    <a href="index.html"
+      class="logo-text text-3xl tracking-widest text-white hover:text-red-500 transition-colors duration-300"><img
+        src="./assets/axivologo.png" alt="" class="w-40"></a>
     <div class="hidden md:flex items-center gap-10">
       <a href="index.html" class="nav-link active">Home</a>
       <a href="about.html" class="nav-link">About</a>
@@ -34,7 +46,8 @@
   </nav>
 
   <!-- Mobile Menu Dropdown -->
-  <div id="mobileMenu" class="mobile-menu fixed top-0 left-0 w-full h-screen bg-black z-40 flex flex-col items-center justify-center gap-8 hidden">
+  <div id="mobileMenu"
+    class="mobile-menu fixed top-0 left-0 w-full h-screen bg-black z-40 flex flex-col items-center justify-center gap-8 hidden">
     <button id="menuClose" class="absolute top-6 right-6 text-white text-3xl">✕</button>
     <a href="index.html" class="mobile-nav-link">Home</a>
     <a href="about.html" class="mobile-nav-link">About</a>
@@ -66,11 +79,14 @@
         <div class="hero-line reveal-up" style="animation-delay:0.4s"></div>
       </div>
       <div class="overflow-hidden">
-        <h1 class="hero-headline reveal-up" style="animation-delay:0.5s">THAT <span class="stroke-text">DOMINATE</span></h1>
+        <h1 class="hero-headline reveal-up" style="animation-delay:0.5s">THAT <span class="stroke-text">DOMINATE</span>
+        </h1>
       </div>
 
-      <div class="mt-10 flex flex-col md:flex-row items-start md:items-center gap-8 reveal-fade" style="animation-delay:0.7s">
-        <p class="hero-subtext max-w-md">We turn raw ideas into visual powerhouses. Branding, web, motion — we build identities that leave marks.</p>
+      <div class="mt-10 flex flex-col md:flex-row items-start md:items-center gap-8 reveal-fade"
+        style="animation-delay:0.7s">
+        <p class="hero-subtext max-w-md">We turn raw ideas into visual powerhouses. Branding, web, motion — we build
+          identities that leave marks.</p>
         <div class="flex gap-4">
           <a href="services.html" class="btn-primary">Explore Work</a>
           <a href="about.html" class="btn-outline">Our Story</a>
@@ -128,7 +144,7 @@
       <div class="flex items-end justify-between mb-16 scroll-reveal">
         <div>
           <p class="section-eyebrow">Selected Work</p>
-          <h2 class="section-title">PROJECTS<br/><span class="text-red-500">THAT SPEAK</span></h2>
+          <h2 class="section-title">PROJECTS<br /><span class="text-red-500">THAT SPEAK</span></h2>
         </div>
         <a href="services.html" class="hidden md:block btn-outline">View All Work →</a>
       </div>
@@ -137,7 +153,8 @@
         <!-- Project 1 -->
         <a href="project-detail.html?id=1" class="project-card group scroll-reveal" style="animation-delay:0.1s">
           <div class="project-img-wrap">
-            <div class="project-img" style="background: linear-gradient(135deg, #1a0000 0%, #8b0000 50%, #ff0000 100%);">
+            <div class="project-img"
+              style="background: linear-gradient(135deg, #1a0000 0%, #8b0000 50%, #ff0000 100%);">
               <div class="project-pattern-1"><img src="./assets/Untitled-2 copy.jpg" alt=""></div>
             </div>
             <div class="project-overlay">
@@ -154,7 +171,8 @@
         <!-- Project 2 -->
         <a href="project-detail.html?id=2" class="project-card group scroll-reveal" style="animation-delay:0.2s">
           <div class="project-img-wrap">
-            <div class="project-img" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #cc0000 100%);">
+            <div class="project-img"
+              style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #cc0000 100%);">
               <div class="project-pattern-2"></div>
             </div>
             <div class="project-overlay">
@@ -171,7 +189,8 @@
         <!-- Project 3 -->
         <a href="project-detail.html?id=3" class="project-card group scroll-reveal" style="animation-delay:0.3s">
           <div class="project-img-wrap">
-            <div class="project-img" style="background: linear-gradient(135deg, #2d0000 0%, #5c0000 40%, #ff3333 100%);">
+            <div class="project-img"
+              style="background: linear-gradient(135deg, #2d0000 0%, #5c0000 40%, #ff3333 100%);">
               <div class="project-pattern-3"></div>
             </div>
             <div class="project-overlay">
@@ -188,7 +207,8 @@
         <!-- Project 4 -->
         <a href="project-detail.html?id=4" class="project-card group scroll-reveal" style="animation-delay:0.4s">
           <div class="project-img-wrap">
-            <div class="project-img" style="background: linear-gradient(135deg, #0d0d0d 0%, #2a0000 50%, #e60000 100%);">
+            <div class="project-img"
+              style="background: linear-gradient(135deg, #0d0d0d 0%, #2a0000 50%, #e60000 100%);">
               <div class="project-pattern-4"></div>
             </div>
             <div class="project-overlay">
@@ -210,7 +230,7 @@
     <div class="noise-overlay opacity-30"></div>
     <div class="max-w-4xl mx-auto text-center relative z-10 scroll-reveal">
       <p class="section-eyebrow text-center">Ready?</p>
-      <h2 class="cta-title">YOUR BRAND<br/><span class="stroke-text-red">DESERVES</span><br/>THE BEST</h2>
+      <h2 class="cta-title">YOUR BRAND<br /><span class="stroke-text-red">DESERVES</span><br />THE BEST</h2>
       <a href="contact.html" class="btn-primary mt-10 inline-block text-lg">Start a Project →</a>
     </div>
   </section>
@@ -219,8 +239,9 @@
   <footer class="footer-section px-6 md:px-16 py-16 border-t border-red-900/30">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
       <div class="md:col-span-2">
-        <p class="logo-text text-4xl text-white mb-4">VORTEX</p>
-        <p class="text-gray-400 barlow max-w-xs">We craft brands, websites, and visual identities that demand attention and drive results.</p>
+        <p class="logo-text mb-4"><img src="./assets/axivologo.png" alt="" class="w-60"></p>
+        <p class="text-gray-400 barlow max-w-xs">We craft brands, websites, and visual identities that demand attention
+          and drive results.</p>
         <div class="flex gap-4 mt-6">
           <a href="#" class="social-icon">In</a>
           <a href="#" class="social-icon">Tw</a>
@@ -248,7 +269,8 @@
         </ul>
       </div>
     </div>
-    <div class="max-w-7xl mx-auto mt-12 pt-6 border-t border-red-900/20 flex flex-col md:flex-row justify-between items-center gap-4">
+    <div
+      class="max-w-7xl mx-auto mt-12 pt-6 border-t border-red-900/20 flex flex-col md:flex-row justify-between items-center gap-4">
       <p class="text-gray-600 text-sm barlow">© 2025 Vortex Studio. All rights reserved.</p>
       <p class="text-gray-600 text-sm barlow">Crafted with ❤️ and obsession.</p>
     </div>
@@ -256,4 +278,5 @@
 
   <script src="main.js"></script>
 </body>
+
 </html>
