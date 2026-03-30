@@ -34,9 +34,9 @@ const SITE_CONFIG = {
   // ──────────────────────────────────────────────
   logo: {
     useLogo: true,              // ← Set true to use image logo
-    logoFile: "./assets/axivologo.png",        // ← Your logo filename
+    logoFile: "axivo-agency/assets/axivologo.png",        // ← Your logo filename
     logoHeight: "40px",          // ← Logo height in nav
-    loaderLogoFile: "./assets/axivologo.png",  // ← Logo shown in loader (can be same or different)
+    loaderLogoFile: "axivo-agency/assets/axivologo.png",  // ← Logo shown in loader (can be same or different)
     loaderLogoHeight: "80px",    // ← Logo height in loader animation
     // If useLogo is false, these text colors are used:
     textColorNav: "white",       // white or red
