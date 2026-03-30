@@ -3,106 +3,114 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Project — VORTEX Studio</title>
+  <title>Project — AXIVO</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="bg-black text-white overflow-x-hidden">
+<body class="bg-black text-white overflow-x-hidden" id="projectDetail">
 
   <div class="page-loader" id="pageLoader">
     <div class="text-center">
-      <div class="loader-logo"><span class="loader-text-white">VOR</span><span class="loader-text-red">TEX</span></div>
+      <div class="loader-logo" id="loaderLogo"></div>
+      <div class="loader-progress mt-6"></div>
     </div>
     <div class="loader-bar"></div>
   </div>
 
   <div class="cursor" id="cursor"></div>
   <div class="cursor-follower" id="cursorFollower"></div>
+  <nav class="fixed top-0 left-0 w-full z-50 nav-glass px-6 md:px-16 py-5 flex items-center justify-between" id="siteNav"></nav>
+  <div id="mobileMenu" class="mobile-menu fixed top-0 left-0 w-full h-screen bg-black z-40 flex flex-col items-center justify-center gap-8 hidden" id="mobileNav"></div>
 
-  <nav class="fixed top-0 left-0 w-full z-50 nav-glass px-6 md:px-16 py-5 flex items-center justify-between">
-    <a href="index.html" class="logo-text text-3xl tracking-widest text-white hover:text-red-500 transition-colors duration-300">VORTEX</a>
-    <div class="hidden md:flex items-center gap-10">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="about.html" class="nav-link">About</a>
-      <a href="services.html" class="nav-link active">Services</a>
-      <a href="testimonials.html" class="nav-link">Testimonials</a>
-      <a href="pricing.html" class="nav-link">Pricing</a>
-      <a href="contact.html" class="nav-link">Contact</a>
-    </div>
-    <a href="contact.html" class="hidden md:block btn-primary">Get Started</a>
-    <button class="md:hidden text-white text-2xl" id="menuToggle">☰</button>
-  </nav>
-  <div id="mobileMenu" class="mobile-menu fixed top-0 left-0 w-full h-screen bg-black z-40 flex flex-col items-center justify-center gap-8 hidden">
-    <button id="menuClose" class="absolute top-6 right-6 text-white text-3xl">✕</button>
-    <a href="index.html" class="mobile-nav-link">Home</a>
-    <a href="about.html" class="mobile-nav-link">About</a>
-    <a href="services.html" class="mobile-nav-link">Services</a>
-    <a href="testimonials.html" class="mobile-nav-link">Testimonials</a>
-    <a href="pricing.html" class="mobile-nav-link">Pricing</a>
-    <a href="contact.html" class="mobile-nav-link">Contact</a>
-  </div>
-
-  <!-- BACK LINK -->
+  <!-- BACK -->
   <div class="pt-28 px-6 md:px-16 pb-4">
     <a href="services.html" class="back-link">← Back to Projects</a>
   </div>
 
-  <!-- PROJECT HERO -->
-  <div class="project-hero-image px-6 md:px-16" id="projectHero">
-    <div class="project-hero-inner"></div>
+  <!-- ══════════════════════════════════════════════════════
+       PROJECT HERO IMAGE
+       ── HOW THIS WORKS ──
+       The hero image/gradient is set in config.js → projects[]
+       For each project:
+         useImage: false → shows gradient (gradient: "linear-gradient(...)") 
+         useImage: true  → shows your image (image: "filename.jpg")
+       
+       ── HOW TO ADD A COVER IMAGE ──
+       1. Place your image in this folder
+       2. Open config.js → find the project
+       3. Set: useImage: true
+       4. Set: image: "project-cover.jpg"
+       ══════════════════════════════════════════════════════ -->
+  <div class="project-hero-image px-6 md:px-16">
+    <div id="pdHero" style="width:100%;height:100%;position:relative;"></div>
   </div>
 
-  <!-- PROJECT INFO -->
+  <!-- PROJECT CONTENT -->
   <section class="py-16 px-6 md:px-16">
     <div class="max-w-7xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
 
-        <!-- Main Content -->
+        <!-- MAIN CONTENT -->
         <div class="lg:col-span-2">
-          <p class="section-eyebrow mb-3" id="projectTag">Category</p>
-          <h1 class="page-hero-title reveal-up" id="projectTitle" style="font-size: clamp(3rem, 7vw, 7rem);">Project Title</h1>
+          <!-- Auto-filled by main.js from config.js → projects[] matching ?id= param -->
+          <p class="section-eyebrow mb-3" id="pdTag"></p>
+          <h1 id="pdTitle" class="page-hero-title reveal-up" style="font-size:clamp(3rem,7vw,7rem);"></h1>
 
-          <div class="project-content mt-10 scroll-reveal" id="projectBody">
-            <!-- Filled by JS -->
-          </div>
+          <!-- ══════════════════════════════════════════════
+               PROJECT BODY TEXT
+               ── HOW TO EDIT PROJECT CONTENT ──
+               Open config.js → find the project by id
+               Edit the body: "" string with HTML content
+               Supported tags: <h2>, <p>, <ul>, <li>
+               ══════════════════════════════════════════════ -->
+          <div class="project-content mt-10 scroll-reveal" id="pdBody"></div>
 
-          <!-- Gallery -->
+          <!-- ══════════════════════════════════════════════
+               PROJECT GALLERY
+               ── HOW TO ADD GALLERY IMAGES ──
+               Open config.js → find the project → gallery: []
+               Each gallery item:
+                 { useImage: false, gradient: "..." }  → gradient placeholder
+                 { useImage: true,  image: "filename.jpg" } → your image
+               Add up to 4 items for a 2x2 grid
+               ══════════════════════════════════════════════ -->
           <div class="mt-16">
             <p class="section-eyebrow mb-8">Project Gallery</p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="projectGallery">
-              <!-- Filled by JS -->
-            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="pdGallery"></div>
           </div>
         </div>
 
-        <!-- Sidebar -->
+        <!-- SIDEBAR -->
         <div class="scroll-reveal">
           <div class="project-sidebar">
+            <!-- Auto-filled from config.js project data -->
             <div class="sidebar-block">
               <span class="sidebar-label">Client</span>
-              <span class="sidebar-value" id="sidebarClient">—</span>
+              <!-- ✏️ SIDEBAR DATA: All filled from config.js → projects[] -->
+              <span class="sidebar-value" id="pdClient"></span>
             </div>
             <div class="sidebar-block">
               <span class="sidebar-label">Year</span>
-              <span class="sidebar-value" id="sidebarYear">—</span>
+              <span class="sidebar-value" id="pdYear"></span>
             </div>
             <div class="sidebar-block">
               <span class="sidebar-label">Services</span>
-              <div class="flex flex-wrap gap-2 mt-3" id="sidebarServices">—</div>
+              <div class="flex flex-wrap gap-2 mt-3" id="pdServices"></div>
             </div>
             <div class="sidebar-block">
               <span class="sidebar-label">Duration</span>
-              <span class="sidebar-value" id="sidebarDuration">—</span>
+              <span class="sidebar-value" id="pdDuration"></span>
             </div>
-            <div class="sidebar-block" style="border: none;">
+            <div class="sidebar-block" style="border:none">
               <span class="sidebar-label">Result</span>
-              <span class="sidebar-value text-red-500 text-xl" id="sidebarResult">—</span>
+              <span class="sidebar-value text-red-500 text-xl font-bold" id="pdResult"></span>
             </div>
           </div>
           <a href="contact.html" class="btn-primary w-full text-center block mt-6">Start a Similar Project →</a>
+          <a href="services.html" class="btn-outline w-full text-center block mt-3">← All Projects</a>
         </div>
 
       </div>
@@ -110,227 +118,23 @@
   </section>
 
   <!-- MORE PROJECTS -->
+  <!-- ✏️ MORE PROJECTS: Automatically shows 2 other projects from config.js -->
   <section class="py-24 px-6 md:px-16 border-t border-red-900/10">
     <div class="max-w-7xl mx-auto">
       <div class="mb-12 scroll-reveal">
         <p class="section-eyebrow">More Work</p>
         <h2 class="section-title">OTHER<br/><span class="text-red-500">PROJECTS</span></h2>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="moreProjects">
-        <!-- Filled by JS -->
-      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="pdMore"></div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="footer-section px-6 md:px-16 py-16 border-t border-red-900/30">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
-      <div class="md:col-span-2">
-        <p class="logo-text text-4xl text-white mb-4">VORTEX</p>
-        <p class="text-gray-400 barlow max-w-xs">We craft brands, websites, and visual identities that demand attention and drive results.</p>
-        <div class="flex gap-4 mt-6"><a href="#" class="social-icon">In</a><a href="#" class="social-icon">Tw</a><a href="#" class="social-icon">Dr</a><a href="#" class="social-icon">Be</a></div>
-      </div>
-      <div>
-        <p class="footer-heading">Navigation</p>
-        <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="testimonials.html">Testimonials</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="contact.html">Contact</a></li></ul>
-      </div>
-      <div>
-        <p class="footer-heading">Contact</p>
-        <ul class="footer-links"><li>hello@vortexstudio.co</li><li>+1 (555) 000-1234</li><li>New York, NY 10001</li></ul>
-      </div>
-    </div>
-    <div class="max-w-7xl mx-auto mt-12 pt-6 border-t border-red-900/20 flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="text-gray-600 text-sm barlow">© 2025 Vortex Studio. All rights reserved.</p>
-      <p class="text-gray-600 text-sm barlow">Crafted with ❤️ and obsession.</p>
-    </div>
-  </footer>
+  <footer class="footer-section px-6 md:px-16 py-16 border-t border-red-900/30" id="siteFooter"></footer>
+  <button id="backToTop" title="Back to top">↑</button>
+  <div id="cookieBanner"></div>
 
-  <style>
-    .back-link { font-family: 'Space Mono', monospace; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: #555; text-decoration: none; transition: color 0.3s; }
-    .back-link:hover { color: var(--red); }
-    .project-hero-inner { width: 100%; height: 100%; }
-    .project-sidebar { border: 1px solid rgba(255,255,255,0.05); }
-    .sidebar-block { padding: 20px 24px; border-bottom: 1px solid rgba(255,255,255,0.05); }
-    .sidebar-label { font-family: 'Space Mono', monospace; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); display: block; margin-bottom: 6px; }
-    .sidebar-value { font-family: 'Barlow', sans-serif; font-size: 1rem; color: white; font-weight: 600; }
-    .sidebar-tag { font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: #555; border: 1px solid #222; padding: 4px 10px; }
-    .gallery-img { aspect-ratio: 4/3; position: relative; overflow: hidden; }
-    .gallery-img-inner { width: 100%; height: 100%; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); }
-    .gallery-img:hover .gallery-img-inner { transform: scale(1.05); }
-  </style>
-
-  <script>
-    const PROJECTS = {
-      1: {
-        tag: "Brand Identity",
-        title: "CRIMSON FINANCE",
-        client: "Crimson Finance Ltd.",
-        year: "2024",
-        duration: "6 Weeks",
-        result: "+340% Brand Recall",
-        services: ["Logo Design", "Brand Guidelines", "Web Design", "Stationery"],
-        heroGradient: "linear-gradient(135deg, #1a0000 0%, #8b0000 50%, #ff0000 100%)",
-        body: `
-          <h2>The Challenge</h2>
-          <p>Crimson Finance had a powerful product but a visual identity that looked like every other fintech — sterile, cold, and forgettable. They needed a brand that could stand in rooms with legacy banks and command the same respect, while still feeling modern and aggressive.</p>
-          <h2>Our Approach</h2>
-          <p>We started by interrogating what Crimson actually stood for — not what they hoped to be, but what made their clients choose them over incumbents. The answer: precision and nerve. That became the design DNA.</p>
-          <p>The identity system uses a sharp, geometric mark that functions as both a logomark and a system element — appearing in patterns, cropped on collateral, and animated in digital contexts. The color system is unapologetically red-forward, using black as its anchor.</p>
-          <h2>The Result</h2>
-          <p>Post-launch brand recall studies showed a 340% improvement versus the old identity. More importantly, Crimson's team reported that investor meetings felt different immediately — they were being taken seriously from the first handshake.</p>
-        `,
-        galleryColors: [
-          "linear-gradient(135deg, #8b0000, #ff0000)",
-          "linear-gradient(135deg, #1a1a1a, #8b0000)",
-          "linear-gradient(135deg, #ff0000, #1a0000)",
-          "linear-gradient(135deg, #0a0a0a, #cc0000)"
-        ]
-      },
-      2: {
-        tag: "Web Design",
-        title: "NOIR ARCHITECTURE",
-        client: "Noir Architecture Studio",
-        year: "2024",
-        duration: "8 Weeks",
-        result: "+180% Lead Generation",
-        services: ["Web Design", "Frontend Development", "Photography Direction", "SEO"],
-        heroGradient: "linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #cc0000 100%)",
-        body: `
-          <h2>The Challenge</h2>
-          <p>Noir Architecture's previous website was built on a template from 2018. For a firm that had designed some of the most striking buildings in northern Italy, this was an embarrassment and a liability — they were losing commissions to less talented competitors simply because of how they presented online.</p>
-          <h2>Our Approach</h2>
-          <p>Architecture is a visual medium, so we designed the site to feel like walking through a building. Navigation is spatial, photography is full-bleed and immersive, and project pages unfold sequentially like you're moving through a space.</p>
-          <p>We worked with a photographer to re-shoot key projects, ensuring the visual raw material matched the ambition of the design system. Every detail — spacing, typography scale, scroll behavior — was obsessed over.</p>
-          <h2>The Result</h2>
-          <p>Lead generation increased 180% in the first quarter after launch. More meaningfully, the quality of inbound shifted dramatically — Noir started receiving RFPs from clients they'd previously had to chase.</p>
-        `,
-        galleryColors: [
-          "linear-gradient(135deg, #1a1a1a, #cc0000)",
-          "linear-gradient(135deg, #0d0d0d, #333)",
-          "linear-gradient(135deg, #cc0000, #0a0a0a)",
-          "linear-gradient(135deg, #222, #8b0000)"
-        ]
-      },
-      3: {
-        tag: "Motion & Visual",
-        title: "FLUX MUSIC LABEL",
-        client: "Flux Records",
-        year: "2023",
-        duration: "4 Weeks",
-        result: "2M+ Views on Launch",
-        services: ["Visual Identity", "Motion Graphics", "Social Media Kit", "Album Artwork"],
-        heroGradient: "linear-gradient(135deg, #2d0000 0%, #5c0000 40%, #ff3333 100%)",
-        body: `
-          <h2>The Challenge</h2>
-          <p>Flux Records was launching with a roster of artists spanning electronic, hip-hop, and experimental genres. They needed a visual identity flexible enough to stretch across styles while remaining distinctly Flux — not just a container for other people's aesthetics.</p>
-          <h2>Our Approach</h2>
-          <p>We built the identity around the concept of signal — the raw electrical energy of music before it's processed into sound. The mark is abstracted waveform geometry; the motion language uses glitch effects and frequency visualizations that feel tactile and alive.</p>
-          <p>The system includes templates for album artwork, social content, promotional materials, and stage backdrops — all driven by a set of constraints that allow maximum creative variation while staying on-brand.</p>
-          <h2>The Result</h2>
-          <p>The label launch campaign generated over 2 million views across platforms in the first week. Three of Flux's artists charted in their respective genres within 90 days — and the visual identity was cited in multiple industry publications as a benchmark for music branding.</p>
-        `,
-        galleryColors: [
-          "linear-gradient(135deg, #5c0000, #ff3333)",
-          "linear-gradient(135deg, #1a0000, #cc0000)",
-          "linear-gradient(135deg, #ff3333, #2d0000)",
-          "linear-gradient(135deg, #0a0000, #8b0000)"
-        ]
-      },
-      4: {
-        tag: "UI/UX Design",
-        title: "APEX COMMERCE",
-        client: "Apex Commerce Inc.",
-        year: "2023",
-        duration: "10 Weeks",
-        result: "3x Conversion Rate",
-        services: ["UX Research", "UI Design", "Prototyping", "A/B Testing"],
-        heroGradient: "linear-gradient(135deg, #0d0d0d 0%, #2a0000 50%, #e60000 100%)",
-        body: `
-          <h2>The Challenge</h2>
-          <p>Apex Commerce had a $40M/year e-commerce operation running on a UX that hadn't been significantly updated since 2019. Cart abandonment was 78%. Mobile conversion was less than a third of desktop. They knew the problem was the experience — they needed someone who could diagnose it precisely and fix it ruthlessly.</p>
-          <h2>Our Approach</h2>
-          <p>We started with a full UX audit combined with session recording analysis and user interviews. The findings were clear: the checkout flow had 11 unnecessary steps, product pages buried the key conversion signals, and mobile was essentially an afterthought.</p>
-          <p>We rebuilt the complete purchase journey from product discovery through post-purchase confirmation. Every interaction was prototyped, tested with real users, and iterated before a single line of production code was written.</p>
-          <h2>The Result</h2>
-          <p>Within 90 days of launch, overall conversion tripled. Cart abandonment dropped to 52%. Mobile conversion reached near-parity with desktop. The $40M business became a $65M business in one fiscal year. The design paid for itself within the first two weeks.</p>
-        `,
-        galleryColors: [
-          "linear-gradient(135deg, #2a0000, #e60000)",
-          "linear-gradient(135deg, #0d0d0d, #cc0000)",
-          "linear-gradient(135deg, #e60000, #1a0000)",
-          "linear-gradient(135deg, #111, #8b0000)"
-        ]
-      }
-    };
-
-    function renderProject() {
-      const params = new URLSearchParams(window.location.search);
-      const id = parseInt(params.get('id')) || 1;
-      const p = PROJECTS[id];
-      if (!p) { window.location.href = 'services.html'; return; }
-
-      document.title = p.title + ' — VORTEX Studio';
-      document.getElementById('projectTag').textContent = p.tag;
-      document.getElementById('projectTitle').textContent = p.title;
-      document.getElementById('projectBody').innerHTML = p.body;
-      document.getElementById('sidebarClient').textContent = p.client;
-      document.getElementById('sidebarYear').textContent = p.year;
-      document.getElementById('sidebarDuration').textContent = p.duration;
-      document.getElementById('sidebarResult').textContent = p.result;
-
-      // Hero
-      const heroInner = document.querySelector('.project-hero-inner');
-      heroInner.style.background = p.heroGradient;
-      heroInner.style.height = '100%';
-      heroInner.style.position = 'relative';
-      heroInner.innerHTML = `<div style="position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 30px,rgba(255,255,255,0.02) 30px,rgba(255,255,255,0.02) 31px);"></div>`;
-
-      // Services
-      const servicesEl = document.getElementById('sidebarServices');
-      servicesEl.innerHTML = p.services.map(s => `<span class="sidebar-tag">${s}</span>`).join('');
-
-      // Gallery
-      const gallery = document.getElementById('projectGallery');
-      gallery.innerHTML = p.galleryColors.map(c => `
-        <div class="gallery-img scroll-reveal">
-          <div class="gallery-img-inner" style="background:${c};position:relative;">
-            <div style="position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 20px,rgba(255,255,255,0.01) 20px,rgba(255,255,255,0.01) 21px);"></div>
-          </div>
-        </div>
-      `).join('');
-
-      // More projects
-      const moreEl = document.getElementById('moreProjects');
-      const others = Object.entries(PROJECTS).filter(([k]) => parseInt(k) !== id).slice(0,2);
-      moreEl.innerHTML = others.map(([k, proj]) => `
-        <a href="project-detail.html?id=${k}" class="project-card group scroll-reveal">
-          <div class="project-img-wrap">
-            <div class="project-img" style="background:${proj.heroGradient};">
-              <div class="project-pattern-1"></div>
-            </div>
-            <div class="project-overlay"><span class="project-cta">View Project →</span></div>
-          </div>
-          <div class="project-info">
-            <span class="project-tag">${proj.tag}</span>
-            <h3 class="project-title">${proj.title}</h3>
-            <p class="project-desc">${proj.client} · ${proj.year}</p>
-          </div>
-        </a>
-      `).join('');
-
-      // Re-init scroll reveals
-      setTimeout(() => {
-        const reveals = document.querySelectorAll('.scroll-reveal');
-        const obs = new IntersectionObserver(entries => {
-          entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-        }, { threshold: 0.1 });
-        reveals.forEach(el => obs.observe(el));
-      }, 500);
-    }
-
-    renderProject();
-  </script>
-
+  <script src="config.js"></script>
+  <script src="components.js"></script>
   <script src="main.js"></script>
 </body>
 </html>

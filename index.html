@@ -1,226 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VORTEX Studio — Design Agency</title>
+  <!-- ✏️ PAGE TITLE: Change "VORTEX Studio" to your agency name -->
+  <title>AXIVO — Design Agency</title>
+  <!-- ✏️ META DESCRIPTION: Update for SEO -->
+  <meta name="description" content="Award-winning design agency specializing in brand identity, web design, and motion." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,300&family=Space+Mono:wght@400;700&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="styles.css" />
+  <!-- ✏️ FAVICON: Add your favicon file and update href -->
+  <!-- <link rel="icon" href="favicon.ico" /> -->
 </head>
-
 <body class="bg-black text-white overflow-x-hidden">
-  <!-- LOADER -->
+
+  <!-- ══════════════════════════════════════════════════════
+       PAGE LOADER
+       ── HOW TO USE YOUR LOGO IN THE LOADER ──
+       Option A (Image Logo):
+         1. Place your logo file in this folder (e.g. logo.svg)
+         2. Open config.js
+         3. Set: logo.useLogo = true
+         4. Set: logo.loaderLogoFile = "logo.svg"
+         5. Set: logo.loaderLogoHeight = "80px" (adjust as needed)
+       Option B (Text Logo):
+         - Just set logo.useLogo = false (default)
+         - The brand name from config.js → brand.name is used
+       ══════════════════════════════════════════════════════ -->
   <div class="page-loader" id="pageLoader">
     <div class="text-center">
-      <div class="loader-logo"><img src="./assets/axivologo.png" alt="" class="w-60"></div>
+      <div class="loader-logo" id="loaderLogo"><!-- auto-filled by main.js --></div>
+      <div class="loader-progress mt-6"></div>
     </div>
     <div class="loader-bar"></div>
   </div>
-  <!-- CURSOR -->
+
   <div class="cursor" id="cursor"></div>
   <div class="cursor-follower" id="cursorFollower"></div>
 
-  <!-- NAV -->
-  <nav class="fixed top-0 left-0 w-full z-50 nav-glass px-6 md:px-16 py-5 flex items-center justify-between">
-    <a href="index.html"
-      class="logo-text text-3xl tracking-widest text-white hover:text-red-500 transition-colors duration-300"><img
-        src="./assets/axivologo.png" alt="" class="w-40"></a>
-    <div class="hidden md:flex items-center gap-10">
-      <a href="index.html" class="nav-link active">Home</a>
-      <a href="about.html" class="nav-link">About</a>
-      <a href="services.html" class="nav-link">Services</a>
-      <a href="testimonials.html" class="nav-link">Testimonials</a>
-      <a href="pricing.html" class="nav-link">Pricing</a>
-      <a href="contact.html" class="nav-link">Contact</a>
-    </div>
-    <a href="contact.html" class="hidden md:block btn-primary">Get Started</a>
-    <!-- Mobile Menu -->
-    <button class="md:hidden text-white text-2xl" id="menuToggle">☰</button>
-  </nav>
+  <!-- ══════════════════════════════════════════════════════
+       NAVIGATION
+       ── HOW TO USE YOUR LOGO IN THE NAV ──
+       Same as loader: set config.js → logo.useLogo = true, logo.logoFile = "logo.svg"
+       The brand-logo class elements are all auto-filled by main.js
+       ══════════════════════════════════════════════════════ -->
+  <nav class="fixed top-0 left-0 w-full z-50 nav-glass px-6 md:px-16 py-5 flex items-center justify-between" id="siteNav"></nav>
+  <div id="mobileMenu" class="mobile-menu fixed top-0 left-0 w-full h-screen bg-black z-40 flex flex-col items-center justify-center gap-8 hidden" id="mobileNav"></div>
 
-  <!-- Mobile Menu Dropdown -->
-  <div id="mobileMenu"
-    class="mobile-menu fixed top-0 left-0 w-full h-screen bg-black z-40 flex flex-col items-center justify-center gap-8 hidden">
-    <button id="menuClose" class="absolute top-6 right-6 text-white text-3xl">✕</button>
-    <a href="index.html" class="mobile-nav-link">Home</a>
-    <a href="about.html" class="mobile-nav-link">About</a>
-    <a href="services.html" class="mobile-nav-link">Services</a>
-    <a href="testimonials.html" class="mobile-nav-link">Testimonials</a>
-    <a href="pricing.html" class="mobile-nav-link">Pricing</a>
-    <a href="contact.html" class="mobile-nav-link">Contact</a>
-  </div>
-
-  <!-- HERO -->
+  <!-- ══════════════════════════════════════════════════════
+       HERO
+       ✏️ Edit all text in config.js → brand section
+       ══════════════════════════════════════════════════════ -->
   <section class="hero-section min-h-screen flex items-center relative overflow-hidden px-6 md:px-16 pt-24">
     <div class="noise-overlay"></div>
     <div class="hero-grid-bg"></div>
-
-    <!-- Floating shapes -->
     <div class="float-shape shape-1"></div>
     <div class="float-shape shape-2"></div>
     <div class="float-shape shape-3"></div>
 
     <div class="relative z-10 max-w-7xl mx-auto w-full">
       <div class="overflow-hidden mb-4">
-        <p class="hero-eyebrow reveal-up" style="animation-delay:0.1s">✦ Award-Winning Design Agency</p>
+        <p class="hero-eyebrow reveal-up" style="animation-delay:.1s" id="heroEyebrow"></p>
       </div>
       <div class="overflow-hidden">
-        <h1 class="hero-headline reveal-up" style="animation-delay:0.2s">WE CRAFT</h1>
+        <h1 class="hero-headline reveal-up" style="animation-delay:.2s" id="heroLine1"></h1>
       </div>
       <div class="overflow-hidden flex items-center gap-6">
-        <h1 class="hero-headline reveal-up text-red-500" style="animation-delay:0.35s">BRANDS</h1>
-        <div class="hero-line reveal-up" style="animation-delay:0.4s"></div>
+        <h1 class="hero-headline reveal-up text-red-500" style="animation-delay:.35s" id="heroLine2"></h1>
+        <div class="hero-line reveal-up" style="animation-delay:.4s"></div>
       </div>
       <div class="overflow-hidden">
-        <h1 class="hero-headline reveal-up" style="animation-delay:0.5s">THAT <span class="stroke-text">DOMINATE</span>
+        <h1 class="hero-headline reveal-up" style="animation-delay:.5s">
+          <span id="heroLine3"></span> <span class="stroke-text" id="heroLine4"></span>
         </h1>
       </div>
-
-      <div class="mt-10 flex flex-col md:flex-row items-start md:items-center gap-8 reveal-fade"
-        style="animation-delay:0.7s">
-        <p class="hero-subtext max-w-md">We turn raw ideas into visual powerhouses. Branding, web, motion — we build
-          identities that leave marks.</p>
+      <div class="mt-10 flex flex-col md:flex-row items-start md:items-center gap-8 reveal-fade" style="animation-delay:.7s">
+        <p class="hero-subtext max-w-md" id="heroSubtext"></p>
         <div class="flex gap-4">
           <a href="services.html" class="btn-primary">Explore Work</a>
-          <a href="about.html" class="btn-outline">Our Story</a>
+          <a href="about.html"    class="btn-outline">Our Story</a>
         </div>
       </div>
-
-      <!-- Stats row -->
-      <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 reveal-fade" style="animation-delay:0.9s">
-        <div class="stat-card">
-          <span class="stat-num">120+</span>
-          <span class="stat-label">Projects Delivered</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-num">8yr</span>
-          <span class="stat-label">Industry Experience</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-num">98%</span>
-          <span class="stat-label">Client Satisfaction</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-num">40+</span>
-          <span class="stat-label">Awards Won</span>
-        </div>
-      </div>
+      <!-- ✏️ STATS: Edit in config.js → stats[] -->
+      <div id="heroStats" class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 reveal-fade" style="animation-delay:.9s"></div>
     </div>
-
-    <!-- Scroll indicator -->
     <div class="absolute bottom-10 left-1/2 -translate-x-1/2 scroll-indicator">
       <div class="scroll-dot"></div>
     </div>
   </section>
 
-  <!-- MARQUEE STRIP -->
+  <!-- MARQUEE -->
+  <!-- ✏️ MARQUEE: Edit the words below directly -->
   <div class="marquee-strip py-4 border-y border-red-500/30 overflow-hidden">
     <div class="marquee-inner">
-      <span>BRANDING</span><span class="text-red-500">✦</span>
-      <span>WEB DESIGN</span><span class="text-red-500">✦</span>
-      <span>UI/UX</span><span class="text-red-500">✦</span>
-      <span>MOTION</span><span class="text-red-500">✦</span>
-      <span>STRATEGY</span><span class="text-red-500">✦</span>
-      <span>IDENTITY</span><span class="text-red-500">✦</span>
-      <span>BRANDING</span><span class="text-red-500">✦</span>
-      <span>WEB DESIGN</span><span class="text-red-500">✦</span>
-      <span>UI/UX</span><span class="text-red-500">✦</span>
-      <span>MOTION</span><span class="text-red-500">✦</span>
-      <span>STRATEGY</span><span class="text-red-500">✦</span>
-      <span>IDENTITY</span><span class="text-red-500">✦</span>
+      <span>BRANDING</span><span class="text-red-500">✦</span><span>WEB DESIGN</span><span class="text-red-500">✦</span><span>UI/UX</span><span class="text-red-500">✦</span><span>MOTION</span><span class="text-red-500">✦</span><span>STRATEGY</span><span class="text-red-500">✦</span><span>IDENTITY</span><span class="text-red-500">✦</span><span>PACKAGING</span><span class="text-red-500">✦</span><span>BRANDING</span><span class="text-red-500">✦</span><span>WEB DESIGN</span><span class="text-red-500">✦</span><span>UI/UX</span><span class="text-red-500">✦</span><span>MOTION</span><span class="text-red-500">✦</span><span>STRATEGY</span><span class="text-red-500">✦</span><span>IDENTITY</span><span class="text-red-500">✦</span><span>PACKAGING</span><span class="text-red-500">✦</span>
     </div>
   </div>
 
-  <!-- FEATURED PROJECTS -->
+  <!-- ══════════════════════════════════════════════════════
+       FEATURED PROJECTS
+       ── HOW TO ADD PROJECT IMAGES ──
+       1. Place your image in this folder (jpg/png/webp recommended)
+       2. Open config.js → find the project by id
+       3. Set: useImage: true
+       4. Set: image: "your-cover-image.jpg"
+       To add a new project: copy any project block in config.js,
+       give it a new id, set featured: true to show on homepage.
+       ══════════════════════════════════════════════════════ -->
   <section class="py-24 px-6 md:px-16">
     <div class="max-w-7xl mx-auto">
       <div class="flex items-end justify-between mb-16 scroll-reveal">
         <div>
           <p class="section-eyebrow">Selected Work</p>
-          <h2 class="section-title">PROJECTS<br /><span class="text-red-500">THAT SPEAK</span></h2>
+          <!-- ✏️ SECTION TITLE: Edit directly here -->
+          <h2 class="section-title">PROJECTS<br/><span class="text-red-500">THAT SPEAK</span></h2>
         </div>
         <a href="services.html" class="hidden md:block btn-outline">View All Work →</a>
       </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- Project 1 -->
-        <a href="project-detail.html?id=1" class="project-card group scroll-reveal" style="animation-delay:0.1s">
-          <div class="project-img-wrap">
-            <div class="project-img"
-              style="background: linear-gradient(135deg, #1a0000 0%, #8b0000 50%, #ff0000 100%);">
-              <div class="project-pattern-1"><img src="./assets/Untitled-2 copy.jpg" alt=""></div>
-            </div>
-            <div class="project-overlay">
-              <span class="project-cta">View Project →</span>
-            </div>
-          </div>
-          <div class="project-info">
-            <span class="project-tag">Brand Identity</span>
-            <h3 class="project-title">Crimson Finance</h3>
-            <p class="project-desc">Complete brand overhaul for a fintech startup — logo, system, web presence.</p>
-          </div>
-        </a>
-
-        <!-- Project 2 -->
-        <a href="project-detail.html?id=2" class="project-card group scroll-reveal" style="animation-delay:0.2s">
-          <div class="project-img-wrap">
-            <div class="project-img"
-              style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #cc0000 100%);">
-              <div class="project-pattern-2"></div>
-            </div>
-            <div class="project-overlay">
-              <span class="project-cta">View Project →</span>
-            </div>
-          </div>
-          <div class="project-info">
-            <span class="project-tag">Web Design</span>
-            <h3 class="project-title">Noir Architecture</h3>
-            <p class="project-desc">Editorial website design for a prestigious architecture firm in Milan.</p>
-          </div>
-        </a>
-
-        <!-- Project 3 -->
-        <a href="project-detail.html?id=3" class="project-card group scroll-reveal" style="animation-delay:0.3s">
-          <div class="project-img-wrap">
-            <div class="project-img"
-              style="background: linear-gradient(135deg, #2d0000 0%, #5c0000 40%, #ff3333 100%);">
-              <div class="project-pattern-3"></div>
-            </div>
-            <div class="project-overlay">
-              <span class="project-cta">View Project →</span>
-            </div>
-          </div>
-          <div class="project-info">
-            <span class="project-tag">Motion & Visual</span>
-            <h3 class="project-title">Flux Music Label</h3>
-            <p class="project-desc">Dynamic visual identity and motion graphics for an independent music label.</p>
-          </div>
-        </a>
-
-        <!-- Project 4 -->
-        <a href="project-detail.html?id=4" class="project-card group scroll-reveal" style="animation-delay:0.4s">
-          <div class="project-img-wrap">
-            <div class="project-img"
-              style="background: linear-gradient(135deg, #0d0d0d 0%, #2a0000 50%, #e60000 100%);">
-              <div class="project-pattern-4"></div>
-            </div>
-            <div class="project-overlay">
-              <span class="project-cta">View Project →</span>
-            </div>
-          </div>
-          <div class="project-info">
-            <span class="project-tag">UI/UX Design</span>
-            <h3 class="project-title">Apex Commerce</h3>
-            <p class="project-desc">Full e-commerce UX redesign resulting in a 3x increase in conversions.</p>
-          </div>
-        </a>
+      <!-- Masonry-style grid — first card spans full width -->
+      <div id="heroProjects" class="projects-masonry">
+        <!-- Auto-rendered by main.js from config.js → projects[] (featured:true) -->
       </div>
     </div>
   </section>
@@ -229,54 +131,23 @@
   <section class="cta-band py-24 px-6 md:px-16 relative overflow-hidden">
     <div class="noise-overlay opacity-30"></div>
     <div class="max-w-4xl mx-auto text-center relative z-10 scroll-reveal">
+      <!-- ✏️ CTA TEXT: Edit directly here -->
       <p class="section-eyebrow text-center">Ready?</p>
-      <h2 class="cta-title">YOUR BRAND<br /><span class="stroke-text-red">DESERVES</span><br />THE BEST</h2>
+      <h2 class="cta-title">YOUR BRAND<br/><span class="stroke-text-red">DESERVES</span><br/>THE BEST</h2>
       <a href="contact.html" class="btn-primary mt-10 inline-block text-lg">Start a Project →</a>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="footer-section px-6 md:px-16 py-16 border-t border-red-900/30">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
-      <div class="md:col-span-2">
-        <p class="logo-text mb-4"><img src="./assets/axivologo.png" alt="" class="w-60"></p>
-        <p class="text-gray-400 barlow max-w-xs">We craft brands, websites, and visual identities that demand attention
-          and drive results.</p>
-        <div class="flex gap-4 mt-6">
-          <a href="#" class="social-icon">In</a>
-          <a href="#" class="social-icon">Tw</a>
-          <a href="#" class="social-icon">Dr</a>
-          <a href="#" class="social-icon">Be</a>
-        </div>
-      </div>
-      <div>
-        <p class="footer-heading">Navigation</p>
-        <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="testimonials.html">Testimonials</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="footer-heading">Contact</p>
-        <ul class="footer-links">
-          <li>hello@vortexstudio.co</li>
-          <li>+1 (555) 000-1234</li>
-          <li>New York, NY 10001</li>
-        </ul>
-      </div>
-    </div>
-    <div
-      class="max-w-7xl mx-auto mt-12 pt-6 border-t border-red-900/20 flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="text-gray-600 text-sm barlow">© 2025 Vortex Studio. All rights reserved.</p>
-      <p class="text-gray-600 text-sm barlow">Crafted with ❤️ and obsession.</p>
-    </div>
-  </footer>
+  <footer class="footer-section px-6 md:px-16 py-16 border-t border-red-900/30" id="siteFooter"></footer>
 
+  <!-- GLOBAL WIDGETS -->
+  <button id="backToTop" title="Back to top">↑</button>
+  <div id="cookieBanner"></div>
+
+  <!-- ✏️ SCRIPTS: Load order is important — do not rearrange -->
+  <script src="config.js"></script>
+  <script src="components.js"></script>
   <script src="main.js"></script>
 </body>
-
 </html>
